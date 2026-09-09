@@ -1,0 +1,4 @@
+useDynLib(sundials, .registration = TRUE)
+export(LdFlags)
+export(CFlags)
+export(inlineCxxPlugin)

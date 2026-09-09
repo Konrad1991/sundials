@@ -1,0 +1,9 @@
+.Rproj.user
+*.o
+*.so
+*.a
+inst/lib/
+/*.tar.gz
+tools/build/
+tools/sundials-*/
+.DS_Store

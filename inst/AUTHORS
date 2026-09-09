@@ -1,0 +1,39 @@
+The vendored SUNDIALS source is copyright:
+
+  Lawrence Livermore National Security [cph]
+  Southern Methodist University [cph]
+  University of Maryland Baltimore County [cph]
+
+and was written by the SUNDIALS team and contributors, including:
+
+  Hindmarsh, Alan C. [aut, cph]
+  Reynolds, Daniel R. [aut, cph]
+  Gardner, David J. [aut, cph]
+  Balos, Cody J. [aut, cph]
+  Woodward, Carol S. [aut, cph]
+  Serban, Radu [aut, cph]
+  Cohen, Scott D. [aut, cph]
+  Byrne, George D. [aut, cph]
+  Brown, Peter N. [aut, cph]
+  Grant, Keith E. [aut, cph]
+  Lee, Steven L. [aut, cph]
+  Shumaker, Dan E. [aut, cph]
+  Taylor, Allan G. [aut, cph]
+  Collier, Aaron [aut, cph]
+  Banks, Lawrence E. [aut, cph]
+  Smith, Steve [aut, cph]
+  Petra, Cosmin [aut, cph]
+  Peles, Slaven [aut, cph]
+  Loffeld, John [aut, cph]
+  Yang, Ulrike M. [aut, cph]
+  Almgren-Bell, James [aut, cph]
+  Lockhart, Shelby L. [aut, cph]
+  Tiedeman, Hilari C. [aut, cph]
+  Yan, Ting [aut, cph]
+  Sexton, Jean M. [aut, cph]
+  White, Chris [aut, cph]
+
+For the complete and authoritative list see the AUTHORS file in the SUNDIALS
+source distribution and https://github.com/LLNL/sundials. The BSD 3-Clause
+license text and the U.S. Department of Energy notice are in
+inst/SUNDIALS-LICENSE and inst/SUNDIALS-NOTICE.

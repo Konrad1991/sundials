@@ -1,0 +1,10 @@
+^\.git$
+^\.github$
+^development$
+^\.gitignore$
+^cran-comments\.md$
+^.*\.tar\.gz$
+^tools/build$
+^tools/sundials-.*$
+^scratch$
+^\.claude$

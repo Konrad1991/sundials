@@ -1,0 +1,26 @@
+# SUNDIALS is compiled into a static library under inst/lib for other packages
+# to link via sundials::LdFlags(); the package's own .so is just a stub.
+
+PKG_CPPFLAGS = -I../inst/include -Isundials/sundials -DNDEBUG
+
+include sundials_srcs.mk
+
+LIBDIR = ../inst/lib$(R_ARCH)
+STATICLIB = $(LIBDIR)/libsundials.a
+
+OBJECTS = init.o
+
+all: $(SHLIB) $(STATICLIB)
+
+# force the archive to build (and its objects) before the stub .so links
+$(SHLIB): $(STATICLIB)
+
+$(STATICLIB): $(SUNDIALS_OBJECTS)
+	@mkdir -p $(LIBDIR)
+	$(AR) rcs $@ $(SUNDIALS_OBJECTS)
+	$(RANLIB) $@
+
+clean:
+	rm -f $(SUNDIALS_OBJECTS) $(OBJECTS) $(SHLIB) $(STATICLIB)
+
+.PHONY: all clean
