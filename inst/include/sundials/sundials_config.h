@@ -30,6 +30,11 @@
 #define SUNDIALS_NOEXCEPT
 #endif
 
+/* R package 'sundials': silence deprecation inside the vendored build */
+#if defined(SUNDIALS_R_NO_DEPRECATION_WARNINGS) && !defined(SUNDIALS_DEPRECATED_MSG)
+#  define SUNDIALS_DEPRECATED_MSG(msg)
+#endif
+
 #ifndef SUNDIALS_DEPRECATED_MSG
 #  define SUNDIALS_DEPRECATED_MSG(msg) __attribute__ ((__deprecated__(msg)))
 #endif
@@ -125,8 +130,8 @@
 
 #define SUN_BUILD_TYPE "RelWithDebInfo"
 
-#define SUN_JOB_ID "20260908121900"
-#define SUN_JOB_START_TIME "20260908121900"
+#define SUN_JOB_ID "20261006092420"
+#define SUN_JOB_START_TIME "20261006092420"
 
 #define SUN_TPL_LIST ""
 #define SUN_TPL_LIST_SIZE ""

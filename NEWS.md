@@ -4,4 +4,5 @@
   KINSOL; serial vector; dense, band and iterative linear solvers) as a static
   library. No Fortran, MPI, GPU or external-library modules. Double precision,
   64-bit indices.
-* No source patches to SUNDIALS were needed.
+* One source patch: deprecation attributes are disabled for the package's own
+  build of SUNDIALS (dependents still see them).

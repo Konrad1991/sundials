@@ -1,6 +1,7 @@
 ^\.git$
 ^\.github$
 ^development$
+^inst/lib$
 ^\.gitignore$
 ^cran-comments\.md$
 ^.*\.tar\.gz$

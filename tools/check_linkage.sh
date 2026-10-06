@@ -12,7 +12,7 @@ CFLAGS="$(R CMD config CFLAGS) $(R CMD config CPICFLAGS)"
 CPPF="-I../inst/include -Isundials/sundials -DNDEBUG"
 
 echo ">> compiling ${ROOT##*/} SUNDIALS objects"
-mapfile -t OBJS < <(sed -n 's/^  \(sundials\/.*\)\.o.*/\1/p' sundials_srcs.mk)
+mapfile -t OBJS < <(sed -n 's/^  \(sundials\/.*\)\.o.*/\1/p' Makevars)
 tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
 for o in "${OBJS[@]}"; do
   mkdir -p "$tmp/$(dirname "$o")"

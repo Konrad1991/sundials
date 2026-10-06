@@ -38,7 +38,7 @@ tools/vendor.sh 7.9.0
 ```
 
 Downloads the release, regenerates the config headers with `cmake`, refreshes
-`src/sundials/**`, `inst/include/**` and `src/sundials_srcs.mk`. See
+`src/sundials/**`, `inst/include/**` and `src/Makevars` (from `tools/Makevars.in`). See
 `development/notes.md`.
 
 ## Licence

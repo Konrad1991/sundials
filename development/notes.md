@@ -22,11 +22,17 @@ Needs `cmake`, `curl`, `python3`, `tar`. It:
    `src/sundials/`, plus every private header from those dirs and from
    `src/sundials/**` (incl. header-only `stl/`)
 4. copies the public headers into `inst/include/` (with `sundials/priv/`)
-5. writes `src/sundials_srcs.mk` (the object list the Makevars includes)
+5. writes `src/Makevars` + `src/Makevars.win` from `tools/Makevars.in`, inlining
+   the object list (a separate `*.mk` in `src/` triggers a check WARNING)
 
 ## Source patches to SUNDIALS
 
-**None.** SUNDIALS 7.9.0 already ships the C hygiene that CRAN forced by hand on
+One, applied by `vendor.sh`: `sundials_config.h` gets a guard that empties
+`SUNDIALS_DEPRECATED_MSG(msg)` when `SUNDIALS_R_NO_DEPRECATION_WARNINGS` is
+defined (only our `Makevars` does). SUNDIALS calls its own deprecated
+work-space API internally, which R CMD check flags as significant warnings.
+
+Otherwise none. SUNDIALS 7.9.0 already ships the C hygiene that CRAN forced by hand on
 the 6.5.0 vendoring in `paropt` (checked by diffing paropt's tree vs pristine
 6.5.0):
 
@@ -42,8 +48,7 @@ at the end of `vendor.sh`.
 ## Build verification
 
 - all 131 TUs compile clean with R's `CFLAGS` + `-Wall -Wextra -Wstrict-prototypes`;
-  only warnings are `-Wdeprecated-declarations` (SUNDIALS calling its own
-  deprecated APIs internally)
+  `-Wdeprecated-declarations` silenced via the patch above
 - `tools/check_linkage.sh` builds the archive the same way the package does and
   links + runs a CVODE dense example against it
 - upstream `ctest` (same cmake flags, examples enabled) is the full check

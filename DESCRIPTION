@@ -4,7 +4,7 @@ Title: Vendored 'SUNDIALS' Solver Suite for Linking by Other Packages
 Version: 7.9.0-1
 Date: 2026-09-08
 Authors@R: c(
-    person("Krämer", "Konrad", role = c("aut", "cre"),
+    person("Konrad", "Krämer", role = c("aut", "cre"),
            email = "konrad_kraemer@yahoo.de"),
     person("Lawrence Livermore National Security", role = "cph",
            comment = "SUNDIALS source code"),
@@ -14,7 +14,6 @@ Authors@R: c(
            comment = "SUNDIALS source code"),
     person("SUNDIALS contributors", role = c("aut", "cph"),
            comment = "see inst/AUTHORS"))
-Maintainer: Krämer Konrad <konrad_kraemer@yahoo.de>
 Description: Bundles the pure-C part of the 'SUNDIALS' suite (CVODE, CVODES,
     ARKODE, IDA, IDAS and KINSOL with the serial vector and the dense, band and
     iterative linear solvers) and builds it into a static library. Other
@@ -31,4 +30,4 @@ BugReports: https://github.com/Konrad1991/sundials/issues
 Encoding: UTF-8
 NeedsCompilation: yes
 SystemRequirements: GNU make
-Suggests: tinytest, Rcpp
+Suggests: tinytest, Rcpp, deSolve

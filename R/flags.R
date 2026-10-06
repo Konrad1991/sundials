@@ -4,6 +4,11 @@
 
 quoted_path <- function(p) paste0('"', normalizePath(p, winslash = "/", mustWork = TRUE), '"')
 
+ld_flags <- function() {
+  libdir <- system.file("lib", .Platform$r_arch, package = "sundials", mustWork = TRUE)
+  paste0("-L", quoted_path(libdir), " -lsundials")
+}
+
 #' Linker flags for the vendored SUNDIALS static library
 #'
 #' Prints \code{-L<libdir> -lsundials}. Use from a dependent package that has
@@ -15,8 +20,7 @@ quoted_path <- function(p) paste0('"', normalizePath(p, winslash = "/", mustWork
 #' @return The flag string, invisibly; also printed to stdout.
 #' @export
 LdFlags <- function() {
-  libdir <- system.file("lib", .Platform$r_arch, package = "sundials", mustWork = TRUE)
-  flags <- paste0("-L", quoted_path(libdir), " -lsundials")
+  flags <- ld_flags()
   cat(flags)
   invisible(flags)
 }
