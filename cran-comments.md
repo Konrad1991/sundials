@@ -12,9 +12,9 @@ separate copy inside every package that needs it.
 ## Test environments
 
 * local: Ubuntu 24.04, R 4.6.1
-* win-builder: R-devel, R-release
-* macbuilder: R-release
-* R-hub: linux (R-devel), macos-arm64, windows, gcc-asan, clang-ubsan
+* R-hub: linux, macos, macos-arm64, windows (all R-devel), ubuntu-release,
+  ubuntu-next, gcc15, clang20, lto, nosuggests, gcc-asan, clang-asan,
+  clang-ubsan, valgrind
 
 ## R CMD check results
 
@@ -25,7 +25,7 @@ separate copy inside every package that needs it.
 
 ## Notes for the reviewer
 
-* **Installed size (~13.5 Mb).** Almost all of it is `lib/libsundials.a`,
+* **Installed size (~12 Mb).** Almost all of it is `lib/libsundials.a`,
   the static library that dependent packages link against. This is the
   purpose of the package.
 
@@ -49,3 +49,7 @@ separate copy inside every package that needs it.
   own deprecated API internally. Packages that use the headers still see the
   deprecation warnings. The modification is applied reproducibly by
   `tools/vendor.sh` and documented in `NEWS.md`.
+
+* **CVODE and IDA.** They are provided by CVODES and IDAS (same API,
+  supersets); compiling both into one static library would define the same
+  symbols twice.
