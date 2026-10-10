@@ -130,8 +130,8 @@
 
 #define SUN_BUILD_TYPE "RelWithDebInfo"
 
-#define SUN_JOB_ID "20261006092420"
-#define SUN_JOB_START_TIME "20261006092420"
+#define SUN_JOB_ID "20261010112643"
+#define SUN_JOB_START_TIME "20261010112643"
 
 #define SUN_TPL_LIST ""
 #define SUN_TPL_LIST_SIZE ""
@@ -288,9 +288,7 @@
  * -----------------------------------------------------------------*/
 
 #define SUNDIALS_ARKODE 1
-#define SUNDIALS_CVODE 1
 #define SUNDIALS_CVODES 1
-#define SUNDIALS_IDA 1
 #define SUNDIALS_IDAS 1
 #define SUNDIALS_KINSOL 1
 #define SUNDIALS_NVECTOR_SERIAL 1

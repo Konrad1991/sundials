@@ -41,16 +41,6 @@ SUNDIALS_OBJECTS = \
   sundials/arkode/arkode_sprkstep_io.o \
   sundials/arkode/arkode_sunstepper.o \
   sundials/arkode/arkode_user_controller.o \
-  sundials/cvode/cvode.o \
-  sundials/cvode/cvode_bandpre.o \
-  sundials/cvode/cvode_bbdpre.o \
-  sundials/cvode/cvode_cli.o \
-  sundials/cvode/cvode_diag.o \
-  sundials/cvode/cvode_io.o \
-  sundials/cvode/cvode_ls.o \
-  sundials/cvode/cvode_nls.o \
-  sundials/cvode/cvode_proj.o \
-  sundials/cvode/cvode_resize.o \
   sundials/cvodes/cvodea.o \
   sundials/cvodes/cvodea_io.o \
   sundials/cvodes/cvodes.o \
@@ -66,13 +56,6 @@ SUNDIALS_OBJECTS = \
   sundials/cvodes/cvodes_nls_stg1.o \
   sundials/cvodes/cvodes_proj.o \
   sundials/cvodes/cvodes_resize.o \
-  sundials/ida/ida.o \
-  sundials/ida/ida_bbdpre.o \
-  sundials/ida/ida_cli.o \
-  sundials/ida/ida_ic.o \
-  sundials/ida/ida_io.o \
-  sundials/ida/ida_ls.o \
-  sundials/ida/ida_nls.o \
   sundials/idas/idaa.o \
   sundials/idas/idaa_io.o \
   sundials/idas/idas.o \

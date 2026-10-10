@@ -7,3 +7,4 @@ inst/lib/
 tools/build/
 tools/sundials-*/
 .DS_Store
+development/sanitizers/

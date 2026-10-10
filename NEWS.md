@@ -6,3 +6,6 @@
   64-bit indices.
 * One source patch: deprecation attributes are disabled for the package's own
   build of SUNDIALS (dependents still see them).
+* CVODE and IDA are provided by CVODES and IDAS (same API, supersets): both
+  in one static library would define the same symbols. The CVODE/IDA headers
+  are shipped. Only `CVodeSetUseIntegratorFusedKernels` (GPU) is unavailable.

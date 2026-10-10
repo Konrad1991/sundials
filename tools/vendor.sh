@@ -22,6 +22,10 @@ curl -fsSL -o "$WORK/sundials.tar.gz" "$url"
 tar xzf "$WORK/sundials.tar.gz" -C "$WORK"
 SRC_TREE="$WORK/sundials-${VERSION}"
 
+# NOTE: CVODE and IDA are not compiled. CVODES/IDAS define the same symbols
+# (supersets, same API), and both in one static archive fail to link with
+# "multiple definition". Their headers are still shipped, so code including
+# <cvode/cvode.h> / <ida/ida.h> links against CVODES / IDAS.
 echo ">> cmake configure (headers + source list only, no build)"
 BUILD="$WORK/build"
 mkdir -p "$BUILD"
@@ -31,8 +35,8 @@ cmake -S "$SRC_TREE" -B "$BUILD" \
   -DEXAMPLES_ENABLE_C=OFF -DEXAMPLES_ENABLE_CXX=OFF -DBUILD_TESTING=OFF \
   -DBUILD_FORTRAN_MODULE_INTERFACE=OFF \
   -DSUNDIALS_INDEX_SIZE=64 \
-  -DBUILD_ARKODE=ON -DBUILD_CVODE=ON -DBUILD_CVODES=ON \
-  -DBUILD_IDA=ON -DBUILD_IDAS=ON -DBUILD_KINSOL=ON \
+  -DBUILD_ARKODE=ON -DBUILD_CVODE=OFF -DBUILD_CVODES=ON \
+  -DBUILD_IDA=OFF -DBUILD_IDAS=ON -DBUILD_KINSOL=ON \
   -DSUNDIALS_ENABLE_PROFILING=OFF -DSUNDIALS_LOGGING_LEVEL=0 \
   >/dev/null
 
